@@ -38,7 +38,7 @@ class shuf:
 def main():
     # Parser for file name
     parser = argparse.ArgumentParser(description='Randomly permute lines of a file')
-    parser.add_argument('filename', nargs='*',help='input lines or a filename')
+    parser.add_argument('filename', nargs='?', default="-",help='input lines or a filename')
 
     # Parser for flags
     parser.add_argument('-n', '--head-count', type=int, help='output at most COUNT lines')

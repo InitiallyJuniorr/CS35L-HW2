@@ -5,6 +5,7 @@ class shuf:
     def __init__(self, filename, args):
         self.args = args
         if filename is None or filename == '-':
+            print("Defaulting to standard input")
             self.lines = sys.stdin.readlines()
         elif type(filename) == list:
             self.lines = filename

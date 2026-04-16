@@ -14,6 +14,7 @@ class shuf:
 
     def print_shuffle(self):
         random.shuffle(self.lines)
+        num_lines = len(self.lines)
 
         if self.args.repeat and self.args.head_count is None:
             while True:
@@ -26,9 +27,7 @@ class shuf:
                 for i in range(self.args.head_count):
                     sys.stdout.write(random.choice(self.lines))
                 return    
-        else:
-            num_lines = len(self.lines)
-                
+
         for line in self.lines[:num_lines]:
             print(line, end='')
     

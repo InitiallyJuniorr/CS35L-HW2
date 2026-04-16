@@ -49,9 +49,12 @@ def main():
     new_input = []
 
     if args.echo:
+        if args.input_range:
+            parser.error("cannot combine -e and -i options")
         new_input = [arg + '\n' for arg in args.filename]
         s = shuf(new_input, args)
         s.print_shuffle()
+
     elif args.input_range:
         try:
             range_ = args.input_range.split('-')

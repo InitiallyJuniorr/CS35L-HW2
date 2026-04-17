@@ -21,9 +21,12 @@ class shuf:
                 sys.stdout.write(random.choice(self.lines))
 
         if self.args.head_count is not None:
-            if self.args.head_count < len(self.lines):
-                num_lines = self.args.head_count              
-            if self.args.repeat:
+            if self.args.head_count < 0:
+                parser.error("head count cannot be negative")
+            else:    
+                if self.args.head_count < len(self.lines):
+                    num_lines = self.args.head_count              
+                if self.args.repeat:
                 for i in range(self.args.head_count):
                     sys.stdout.write(random.choice(self.lines))
                 return    

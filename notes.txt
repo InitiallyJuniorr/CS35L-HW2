@@ -1,0 +1,14 @@
+When running on Python2 I got a syntax error in print(line, end=''). 
+One of the reasons for this is because 'end' was not introduced until Python 3. 
+Another reason is because Python3 interprets print as an embedded function (rather than a statement), 
+taken in parenthesis with multiple arguments.
+
+Coreutils
+Median sum(user + sys): 0.094
+
+Python
+Median sum(user + sys): 0.723
+
+Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+Red Hat Enterprise Linux 9.6 (Plow)
+
